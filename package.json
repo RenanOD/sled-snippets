@@ -1,0 +1,26 @@
+{
+    "name": "sled-snippets",
+    "displayName": "sled-snippets",
+    "description": "Snippets for Sleders",
+    "version": "1.0.0",
+    "publishser": "renan",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RenanOD/sled-snippets"
+    },
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "csharp",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

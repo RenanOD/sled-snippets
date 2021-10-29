@@ -1,0 +1,51 @@
+{
+	// Documentation https://code.visualstudio.com/docs/editor/userdefinedsnippets
+	// Generate from code https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode
+	"Command Structure":
+	{
+		"prefix": "command",
+		"body": [
+			"using Sled.BuildingBlocks.Application.Commands;",
+			"",
+			"namespace Sled.${TM_DIRECTORY/.*workspace[\\/\\\\](([^\\/\\\\]*)([\\/\\\\])?)|([\\/\\\\])([^\\/\\\\]*)/$2${3:+.}${5:+.}$5/g}",
+			"{",
+			"\tpublic class $TM_FILENAME_BASE : CommandBase",
+			"\t{",
+			"\t\tpublic ${1|string,Guid,int,bool,decimal,DateTime,other|} ${2:Field} { get; }",
+			"",
+			"\t\tpublic $TM_FILENAME_BASE($1 ${2/(.*)/${1:/camelcase}/})",
+			"\t\t{",
+			"\t\t\t${2/(.*)/${1:/pascalcase}/} = ${2/(.*)/${1:/camelcase}/};",
+			"\t\t}",
+			"\t}",
+			"}"
+		],
+		"description": "Command barebones"
+	},
+	"Command Structure with 2 fields":
+	{
+		"prefix": "command2",
+		"body": [
+			"using Sled.BuildingBlocks.Application.Commands;",
+			"",
+			"namespace Sled.${TM_DIRECTORY/.*workspace[\\/\\\\](([^\\/\\\\]*)([\\/\\\\])?)|([\\/\\\\])([^\\/\\\\]*)/$2${3:+.}${5:+.}$5/g}",
+			"{",
+			"\tpublic class $TM_FILENAME_BASE : CommandBase",
+			"\t{",
+			"\t\tpublic ${1|string,Guid,int,bool,decimal,DateTime,other|} ${2:Field} { get; }",
+			"\t\tpublic ${3|string,Guid,int,bool,decimal,DateTime,other|} ${4:Field} { get; }",
+			"",
+			"\t\tpublic $TM_FILENAME_BASE(",
+			"\t\t\t$1 ${2/(.*)/${1:/camelcase}/},",
+			"\t\t\t$3 ${4/(.*)/${1:/camelcase}/}",
+			")",
+			"\t\t{",
+			"\t\t\t${2/(.*)/${1:/pascalcase}/} = ${2/(.*)/${1:/camelcase}/};",
+			"\t\t\t${4/(.*)/${1:/pascalcase}/} = ${4/(.*)/${1:/camelcase}/};",
+			"\t\t}",
+			"\t}",
+			"}"
+		],
+		"description": "Command barebones with 2 fields"
+	}
+}
